@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="id_matrix.id_matrix.PaymentForm"
+      spacing="15" alignment="CENTER">
+
+    <!-- Content Wrapper for Center Alignment -->
+    <VBox spacing="10" alignment="CENTER_LEFT" maxWidth="400">
+
+        <!-- Total Amount Label -->
+        <Label fx:id="lblTotalAmount" text="Total Amount: $0.00" />
+
+        <!-- Document Type Label -->
+        <Label fx:id="lblDocumentType" text="Document Type: None" />
+
+        <!-- Phone Number Input -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Phone Number:" />
+            <TextField fx:id="txtPhoneNumber" />
+        </HBox>
+
+        <!-- Address Input -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Address:" />
+            <TextField fx:id="txtAddress" />
+        </HBox>
+
+        <!-- Service Type ComboBox -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Service Type:" />
+            <ComboBox fx:id="cmbServiceType" />
+        </HBox>
+    </VBox>
+
+    <!-- Submit Button -->
+    <Button fx:id="submitButton" text="Submit" onAction="#handleSubmitButtonClick"  alignment="CENTER"/>
+
+<!--    <Button text="Submit" onAction="#handleSubmitButtonClick" alignment="CENTER" />-->
+</VBox>
