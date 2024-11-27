@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.canvas.Canvas?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="id_matrix.id_matrix.templateDomicile">
+    <!-- Background Image -->
+    <ImageView fx:id="backgroundImageView" fitWidth="600" fitHeight="700" layoutX="400" layoutY="30">
+        <image>
+            <Image url="domecile.jpg"/>
+        </image>
+    </ImageView>
+
+    <!-- Canvas to Draw Domicile -->
+    <Canvas fx:id="canvas" layoutX="400" layoutY="100" width="600" height="700" />
+
+    <!-- Domicile Form Fields -->
+    <StackPane alignment="CENTER">
+        <AnchorPane >
+            <Label text="Full Name:" layoutX="460" layoutY="280" style="-fx-font-size: 14px;"/>
+            <TextField fx:id="fullName" promptText="Full Name" layoutX="560" layoutY="280" prefWidth="300"/>
+
+            <Label text="Father's Name:" layoutX="460" layoutY="320" style="-fx-font-size: 14px;"/>
+            <TextField fx:id="fatherName" promptText="Father's Name" layoutX="580" layoutY="320" prefWidth="300"/>
+
+            <Label text="Mother's Name:" layoutX="460" layoutY="360" style="-fx-font-size: 14px;"/>
+            <TextField fx:id="motherName" promptText="Mother's Name" layoutX="580" layoutY="360" prefWidth="300"/>
+
+            <Label text="Date of Birth:" layoutX="460" layoutY="400" style="-fx-font-size: 14px;"/>
+            <TextField fx:id="dob" promptText="Date of Birth (DD/MM/YYYY)" layoutX="560" layoutY="400" prefWidth="300"/>
+
+            <Label text="Gender:" layoutX="460" layoutY="440" style="-fx-font-size: 14px;"/>
+            <TextField fx:id="gender" promptText="Gender" layoutX="560" layoutY="440" prefWidth="300"/>
+
+            <Label text="Permanent Address:" layoutX="460" layoutY="480" style="-fx-font-size: 14px;"/>
+            <TextField fx:id="permanentAddress" promptText="Permanent Address" layoutX="620" layoutY="480" prefWidth="300"/>
+
+            <Label text="Province:" layoutX="460" layoutY="520" style="-fx-font-size: 14px;"/>
+            <TextField fx:id="province" promptText="Province" layoutX="560" layoutY="520" prefWidth="300"/>
+            <!-- Sidebar Buttons -->
+            <Button fx:id="btnBack" onAction="#onBackButtonClick" style="-fx-base: #4CAF50; -fx-text-fill: white;" text="Back" layoutX="600" layoutY="680" />
+
+            <Button text="Submit" layoutX="700" layoutY="680" style="-fx-base: #4CAF50; -fx-text-fill: white;" onAction="#onSubmit"/>
+        </AnchorPane>
+    </StackPane>
+</AnchorPane>

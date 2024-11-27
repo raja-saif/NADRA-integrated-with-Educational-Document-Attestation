@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<?import javafx.util.Callback?>
+<BorderPane prefHeight="559.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id_matrix.id_matrix.EmpFunc">
+    <!-- Top Header -->
+    <top>
+        <AnchorPane style="-fx-background-color: #333; -fx-padding: 10px;">
+            <!-- Text Label -->
+            <Text style="-fx-font-size: 18px; -fx-fill: white;" text="Employee Functionalities" />
+        </AnchorPane>
+    </top>
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox alignment="TOP_CENTER" spacing="40" style="-fx-background-color: black; -fx-padding: 20px;">
+            <!-- Background Image before the buttons -->
+            <ImageView fitHeight="129.0" fitWidth="170">
+                <image>
+                    <Image url="bground.png" />
+                </image>
+            </ImageView>
+
+            <!-- Buttons with event handlers for navigation -->
+            <Button fx:id="btnBack" onAction="#onBackButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="Back" />
+            <Button fx:id="btnDisplayCustomers" onAction="#onManageCustomerButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="Manage Customers" />
+            <Button fx:id="btnAddCustomers" onAction="#onVerifyApplicationButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="Verify Applications" />
+            <Button mnemonicParsing="false" style="-fx-background-color: #808080;" text="Duplicate Document" textFill="WHITE" />
+        </VBox>
+    </left>
+
+    <!-- Center Area with TableView, initially hidden -->
+    <center>
+        <TableView fx:id="applicationTable" prefWidth="400" prefHeight="300" visible="false">
+            <columns>
+                <TableColumn fx:id="statusColumn" text="Status" />
+                <TableColumn fx:id="emailColumn" text="Email" />
+                <TableColumn fx:id="typeColumn" text="type" />
+                <TableColumn fx:id="nameColumn" text="FullName" />
+                <TableColumn fx:id="fatherNameColumn" text="FatherName" />
+                <TableColumn fx:id="genderColumn" text="Gender" />
+                <TableColumn fx:id="dobColumn" text="DOB" />
+                <TableColumn fx:id="cnicColumn" text="CNIC" />
+
+                <TableColumn fx:id="countryColumn" text="Naionality" />
+                <TableColumn fx:id="doiColumn" text="Issue" />
+                <TableColumn fx:id="doeColumn" text="Expiry" />
+
+                <TableColumn fx:id="yearColumn" text="year" />
+                <TableColumn fx:id="groupColumn" text="group" />
+                <TableColumn fx:id="subjectCountColumn" text="subjectCount" />
+                <TableColumn fx:id="gradeLevelColumn" text="gradeLevel" />
+                <TableColumn fx:id="percentageColumn" text="percentage" />
+
+                <TableColumn fx:id="verifyColumn" text="Verify" />
+                <TableColumn fx:id="cancelColumn" text="Cancel" />
+
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

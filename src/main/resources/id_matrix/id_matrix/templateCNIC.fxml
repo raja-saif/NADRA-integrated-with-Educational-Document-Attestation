@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.VBox?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="id_matrix.id_matrix.templateCNIC">
+    <!-- Left Sidebar -->
+    <VBox layoutX="0" layoutY="0" prefWidth="200" alignment="TOP_CENTER" spacing="20"
+          style="-fx-background-color: black; -fx-padding: 20px;">
+        <!-- Background Image before the buttons -->
+        <ImageView fitHeight="129.0" fitWidth="170">
+            <image>
+                <Image url="bground.png" />
+            </image>
+        </ImageView>
+
+        <!-- Sidebar Buttons -->
+        <Button fx:id="btnBack" onAction="#onBackButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="Back" />
+        <Button fx:id="btnDocuments" onAction="#onDocumentsButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="My Documents" />
+        <Button fx:id="btnApplications" onAction="#onApplicationsButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="My Applications" />
+        <Button fx:id="btnIDCard" onAction="#onIDCardButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="Create ID-Card" />
+        <Button fx:id="btnBForm" onAction="#onBFormButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="Create B-Form" />
+        <Button fx:id="btnPassport" onAction="#onPassportButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="Create Passport" />
+        <Button fx:id="btnDomicile" onAction="#onDomicileButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="Create Domicile" />
+        <Button fx:id="btnVerifyEduDoc" onAction="#onVerifyEduDocButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="Verify Edu. Document" />
+        <Button fx:id="btnGenerateEquiv" onAction="#onGenerateEquivButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="Generate Equivalence" />
+        <Button fx:id="btnDuplicateDoc" onAction="#onDuplicateDocButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="Duplicate Document" />
+    </VBox>
+
+    <!-- Main Content -->
+    <AnchorPane layoutX="200" layoutY="0">
+        <!-- Background Image (CNIC sample) -->
+        <ImageView fx:id="backgroundImageView" fitWidth="600" fitHeight="400" layoutX="400" layoutY="100">
+            <image>
+                <Image url="cnic.png"/>
+            </image>
+        </ImageView>
+
+        <!-- Canvas to Draw CNIC Form -->
+        <Canvas fx:id="canvas" layoutX="400" layoutY="100" width="600" height="400" />
+
+        <!-- CNIC Form Fields -->
+        <StackPane alignment="CENTER">
+            <AnchorPane style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-padding: 20px; -fx-opacity: 0.6;">
+                <TextField fx:id="fullName" layoutX="560" layoutY="210" prefWidth="200" promptText="Full Name"/>
+                <TextField fx:id="fatherName" layoutX="560" layoutY="300" prefWidth="200" promptText="Father's Name"/>
+                <TextField fx:id="gender" layoutX="560" layoutY="360" prefWidth="50" promptText="Gender"/>
+                <TextField fx:id="country" layoutX="640" layoutY="360" prefWidth="145" promptText="Country"/>
+                <TextField fx:id="dob" layoutX="720" layoutY="410" prefWidth="100" promptText="DOB"/>
+
+                <!-- Upload Image Button -->
+                <Button text="Upload Image" layoutX="845" layoutY="250" style="-fx-base: #4CAF50; -fx-text-fill: white;" onAction="#uploadImage" />
+
+                <!-- Submit Button -->
+                <Button text="Submit" layoutX="450" layoutY="550" style="-fx-base: #4CAF50; -fx-text-fill: white;" onAction="#onSubmit" />
+            </AnchorPane>
+        </StackPane>
+
+        <!-- Image View for the Uploaded Image (Optional) -->
+        <ImageView fx:id="uploadedImageView" layoutX="845" layoutY="200" fitHeight="120" fitWidth="100" />
+    </AnchorPane>
+</AnchorPane>

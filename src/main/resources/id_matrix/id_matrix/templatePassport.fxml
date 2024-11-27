@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id_matrix.id_matrix.templatePassport">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+        <ImageView fitHeight="721.0" fitWidth="511.0" layoutX="413.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="Passportt.png" />
+            </image>
+        </ImageView>
+
+        <TextField fx:id="nameField" layoutX="677.0" layoutY="120.0" prefHeight="2.0" prefWidth="171.0" />
+        <TextField fx:id="dobField" layoutX="700.0" layoutY="150.0" />
+        <TextField fx:id="sexField" layoutX="700.0" layoutY="170.0" prefHeight="24.0" prefWidth="87.0" />
+        <TextField fx:id="countryField" layoutX="698.0" layoutY="194.0" prefHeight="24.0" prefWidth="87.0" />
+        <TextField fx:id="dateOfIssueField" layoutX="699.0" layoutY="230.0" prefHeight="24.0" prefWidth="62.0" />
+        <TextField fx:id="validUntilField" layoutX="683.0" layoutY="255.0" prefHeight="24.0" prefWidth="62.0" />
+        <TextField fx:id="typeField" layoutX="810.0" layoutY="230.0" prefHeight="15.0" prefWidth="32.0" />
+
+    </children>
+    <!-- Sidebar Buttons -->
+    <Button fx:id="btnBack" onAction="#onBackButtonClick" style="-fx-background-color: #808080; -fx-text-fill: white;" text="Back" layoutX="600" layoutY="500" />
+
+    <Button layoutX="700" layoutY="500" onAction="#onSubmit" mnemonicParsing="false" style="-fx-background-color: #808080; -fx-text-fill: white;" text="Submit" />
+</AnchorPane>
