@@ -9,11 +9,15 @@ import java.util.Properties;
 public class OtpSender {
 
     public Boolean otp(String email, String otp) {
-        // Sender's email credentials
-
-        String from = "loneribrahim@gmail.com";
-      //  String password="dbxn dgop osms ilf";
-         String password = "dvjl fxuu pzwc bhet";
+        // Sender's email credentials are read from environment variables (never hard-code them):
+        //   IDMATRIX_MAIL_USER     - Gmail address used to send OTPs
+        //   IDMATRIX_MAIL_PASSWORD - Gmail App Password for that account
+        String from = System.getenv("IDMATRIX_MAIL_USER");
+        String password = System.getenv("IDMATRIX_MAIL_PASSWORD");
+        if (from == null || from.isBlank() || password == null || password.isBlank()) {
+            showAlert("Email not configured", "Set IDMATRIX_MAIL_USER and IDMATRIX_MAIL_PASSWORD to send OTP emails.");
+            return false;
+        }
 
         // Recipient's email address
         String to = email;

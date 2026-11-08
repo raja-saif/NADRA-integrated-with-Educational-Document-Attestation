@@ -60,7 +60,7 @@ ID Matrix is a **JavaFX desktop application**. Citizens use it to apply for iden
 **Prerequisites:** JDK 22+, Maven (or the bundled `mvnw`), and a local Microsoft SQL Server instance.
 
 1. **Database:** create a SQL Server database named **`SDA`** on `localhost:1433`. The connection string in `IDMatrixManager.java` uses Windows integrated security (`integratedSecurity=true`). The required tables (users, applications and document tables) must be created first. No schema script is included in the repo.
-2. **Email:** in `OtpSender.java`, set the sender address and password to your own Gmail account and a Gmail **App Password**. It is better to load these from environment variables than to hard-code them.
+2. **Email:** set the `IDMATRIX_MAIL_USER` (Gmail address) and `IDMATRIX_MAIL_PASSWORD` (Gmail **App Password**) environment variables before running. `OtpSender.java` reads them at runtime.
 3. **Build config:** check `pom.xml` before the first run:
    - Set the `javafx-maven-plugin` `mainClass` to `id_matrix.id_matrix.IDMatrix`.
    - Add the dependencies that `module-info.java` requires but `pom.xml` does not list: Jakarta Mail, the Microsoft SQL Server JDBC driver, `javafx-web` and `javafx-swing`.
